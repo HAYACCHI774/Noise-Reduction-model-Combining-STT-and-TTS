@@ -16,14 +16,20 @@
 <body>
     <h1>2023 2학기 컴퓨터종합설계 1조 PureSound<br>
         <br>
-        [STT와 TTS를 결합한 소음제거 모델] <br>
+        <p style="font-size: 23px;">STT와 TTS를 결합한 소음제거 모델</p>
+        <p style="font-size: 20px;">Noise Reduction Model Combining STT and TTS</p>
         <br>
+        <p style="font-size: 13px;">Authors : 황태연 (서울시립대학교 수학과), 고세정 (서울시립대학교 컴퓨터과학부), 채준석 (서울시립대학교 수학과), 유하진 (서울시립대학교 컴퓨터과학부)</p><br>
+        <p style="font-size: 13px;">Abstract : 통화 서비스에서 소음을 줄이고 사용자의 목소리를 명확하게 전달하는 것은 중요하다. 그러나 소음 제거 기술을 발전시키는 데에는 상당한 시간이 소요된다. 본 논문에서는 STT(Speech-to-Text)와 TTS(Text-to-Speech)를 결합하여 근본적인 소음 제거 방법을 제안한다. TTS를 통하여 음성을 합성하면 기존의 소음은 없어지고 음성의 명료도는 높일 수 있다. 이때 STT에서 음성을 텍스트로 변환하는 정확도가 중요하며, 본 논문은 STT 앞에 DNS(Deep Noise Suppression)를 결합하고 Fine-tuning하여 CER(Character Error Rate)을 23.62에서 10.56까지 낮추어 정확도를 향상했다. 또한 STT와 TTS 사이에 GPT를 결합하여 TTS에서 자연스러운 음성을 출력할 수 있도록 하였다.
+        <p style="font-size: 20px;">System Architecture :</p>
+        <img src="./systemarc.jpg" alt="시스템 구조">
           <table>
             <thead>
               <tr>
-                <th><p style="font-size: 16px;">소음이 포함된 음성</p></th>
-                <th><p style="font-size: 16px;">기존 소음제거 모델 사용한 음성</p></th>
-                <th><p style="font-size: 16px;">STT-TTS 소음 제거 모델 사용한 음성</p></th>
+                <th><p style="font-size: 20px;">소음이 포함된 음성</p></th>
+                <th><p style="font-size: 20px;">DNS로 소음이 제거된 음성</p></th>
+                <th><p style="font-size: 20px;">GPT 없는 모델의 결과</p></th>
+                <th><p style="font-size: 20px;">GPT가 포함된 모델의 결과</p></th>
               </tr>
             </thead>
             <tbody>
@@ -40,6 +46,16 @@
                     <source src="./example.wav" type="audio/wav">
                     Your browser does not support the audio element.
                   </audio></td>
+                <td><audio controls>
+                    <source src="./example.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                  </audio></td>
+              </tr>
+              <tr>
+                <td><p style="font-size: 12px;">어 원 플러스 원이라고 해도 지금 행사니까 <br>원 플러스 원인 거지 만약에 따로 사게 되면은 <br>한 네 개 정도는 이득 될 수도 있을 것 같아 <br>배송료가 얼마인지에 따라 다르겠지만.</p></td>
+                <td><p style="font-size: 12px;">어 원 플러스 원이라고 해도 지금 행사니까 <br>원 플러스 원인 거지 만약에 따로 사게 되면은 <br>한 네 개 정도는 이득 될 수도 있을 것 같아 <br>배송료가 얼마인지에 따라 다르겠지만.</p></td>
+                <td><p style="font-size: 12px;">1 플러스 1이라고 해도 지금 행사니까 <br>1 플러스 1인 거지. 만약에 따로 사게 되면은 <br>한 네 개 정도는 이기 될 수도 있을 것 같아. <br>배송류가 얼만지에 따라 다르겠지.</p></td>
+                <td><p style="font-size: 12px;">1 플러스 1이라고 해도 지금 행사니까 <br>1 플러스 1인 거지. 만약에 따로 사게 되면은 <br>한 네 개 정도는 이기 될 수도 있을 것 같아. <br>배송료가 얼마인지에 따라 다르겠지.</p></td>
               </tr>
               <tr>
                 <td><audio controls>
@@ -54,7 +70,65 @@
                     <source src="./example.wav" type="audio/wav">
                     Your browser does not support the audio element.
                   </audio></td>
+                <td><audio controls>
+                    <source src="./example.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                  </audio></td>
               </tr>
+              <tr>
+                <td><p style="font-size: 12px;">그래 지금 우리 집사람도 빨리 오고 싶지 <br>나한테 문자로 빨리 갈게 차 끌고 가 <br>이렇게 문자까지 보냈어 <br>내가 그거 자네한테 이야기해 줬지</p></td>
+                <td><p style="font-size: 12px;">그래 지금 우리 집사람도 빨리 오고 싶지 <br>나한테 문자로 빨리 갈게 차 끌고 가 <br>이렇게 문자까지 보냈어 <br>내가 그거 자네한테 이야기해 줬지</p></td>
+                <td><p style="font-size: 12px;">그래 지금 우리 집사람도 빨리 오고 싶지 <br>나한테 문자로 빨리 갈게 탁 들고 가 <br>이렇게 문자까지 보냈어 <br>내가 그거 자네한테 이야기해줬지</p></td>
+                <td><p style="font-size: 12px;">그래, 지금 우리 집 사람도 빨리 오고 싶지. <br>나한테 문자로 빨리 갈게. 탁 들고 가! <br>이렇게 문자까지 보냈어. <br>내가 그거 자네한테 이야기해줬지.</p></td>
+                </tr>
+                <tr>
+                  <td><audio controls>
+                      <source src="./example.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls>
+                      <source src="./example.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls>
+                      <source src="./example.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls>
+                      <source src="./example.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                    </audio></td>
+                </tr>
+                <tr>
+                  <td><p style="font-size: 12px;">그래 아까 나름대로 작전을 잘 짰던 것 같아 <br>만두부터 먹고 그다음에 맛있는 탕수육까지 <br>먹었으니 작전을 잘 짠 것 같아 <br>먹방은 솔직히 그 먹는 과정에 나와서 먹고 싶은 마음이 <br>들지만 광고 속에 있는 먹는 선전은 별로 와닿지 않지</p></td>
+                  <td><p style="font-size: 12px;">그래 아까 나름대로 작전을 잘 짰던 것 같아 <br>만두부터 먹고 그다음에 맛있는 탕수육까지 <br>먹었으니 작전을 잘 짠 것 같아 <br>먹방은 솔직히 그 먹는 과정에 나와서 먹고 싶은 마음이 <br>들지만 광고 속에 있는 먹는 선전은 별로 와닿지 않지</p></td>
+                  <td><p style="font-size: 12px;">그래 아까 나름대로 작전을 잘 짰던 것 같아 <br>만두부터 먹고 그다음에 맛있는 탕수육까지 <br>먹었으니 작전을 잘 짠 것 같아 <br>먹방은 솔직히 그 먹는 과정이 나와서 먹고 싶은 마음이 <br>되지만 광고 속에 있는 먹는 선전은 별로 맞았지 않지</p></td>
+                  <td><p style="font-size: 12px;">그래, 아까 나름대로 작전을 잘 짰던 것 같아. <br>만두부터 먹고, 그 다음에 맛있는 탕수육까지 <br>먹었으니 작전을 잘 짠 것 같아. <br>먹방은 솔직히 그 먹는 과정이 나와서 먹고 싶은 마음이 <br>되지만, 광고 속에 있는 먹는 선전은 별로 맞지 않았지.</p></td>
+                  </tr>
+                  <tr>
+                    <td><audio controls>
+                        <source src="./example.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                      </audio></td>
+                    <td><audio controls>
+                        <source src="./example.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                      </audio></td>
+                    <td><audio controls>
+                        <source src="./example.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                      </audio></td>
+                    <td><audio controls>
+                        <source src="./example.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                      </audio></td>
+                  </tr>
+                  <tr>
+                    <td><p style="font-size: 12px;">아니요. 저희는 지금 베란다가. 좀 좁은 편이라서. <br>빨래 널 공간이 별로 없거든요. 그래서 지금 <br>가끔씩은 거실에다가 빨래를 널기도 하고요. <br>좀 자잘한 것 같은 경우는 한 번에 몰아서 베란다에 <br>말리기도 하고 있어요.</p></td>
+                    <td><p style="font-size: 12px;">아니요. 저희는 지금 베란다가. 좀 좁은 편이라서. <br>빨래 널 공간이 별로 없거든요. 그래서 지금 <br>가끔씩은 거실에다가 빨래를 널기도 하고요. <br>좀 자잘한 것 같은 경우는 한 번에 몰아서 베란다에 <br>말리기도 하고 있어요.</p></td>
+                    <td><p style="font-size: 12px;">아니요. 저희는 지금 베란다가 좀 좁은 편이라서 <br>빨래에 넣을 공간이 별로 없거든요. 그래서 지금 <br>가끔씩은 거실에다가 빨래를 넣이기도 하고요. <br>좀 자잘한 것 같은 경우는 한 번에 몰아서 베란다에 <br>말리기도 하고 있어요.</p></td>
+                    <td><p style="font-size: 12px;">아니요, 저희는 지금 베란다가 좀 좁은 편이라서 <br>빨래를 넣을 공간이 별로 없거든요. 그래서 지금 <br>가끔씩은 거실에다가 빨래를 넣기도 하고요. <br>좀 자잘한 것 같은 경우는 한 번에 몰아서 베란다에 <br>말리기도 하고 있어요.</p></td>
+                    </tr>
             </tbody>
           </table>
           
