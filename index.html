@@ -22,7 +22,7 @@
         <p style="font-size: 15px;">Authors : 황태연 (서울시립대학교 수학과), 고세정 (서울시립대학교 컴퓨터과학부), 채준석 (서울시립대학교 수학과), 유하진 (서울시립대학교 컴퓨터과학부)</p><br>
         <p style="font-size: 15px;">Abstract : 통화 서비스에서 소음을 줄이고 사용자의 목소리를 명확하게 전달하는 것은 중요하다. 그러나 소음 제거 기술을 발전시키는 데에는 상당한 시간이 소요된다. 본 논문에서는 STT(Speech-to-Text)와 TTS(Text-to-Speech)를 결합하여 근본적인 소음 제거 방법을 제안한다. TTS를 통하여 음성을 합성하면 기존의 소음은 없어지고 음성의 명료도는 높일 수 있다. 이때 STT에서 음성을 텍스트로 변환하는 정확도가 중요하며, 본 논문은 STT 앞에 DNS(Deep Noise Suppression)를 결합하고 Fine-tuning하여 CER(Character Error Rate)을 23.62에서 10.56까지 낮추어 정확도를 향상했다. 또한 STT와 TTS 사이에 GPT를 결합하여 TTS에서 자연스러운 음성을 출력할 수 있도록 하였다.
         <p style="font-size: 20px;">System Architecture :</p>
-        <img src="C:\Users\채준석\Pictures\systemarc.jpg" alt="시스템 구조">
+        <img src="systemarc.jpg" alt="시스템 구조">
           <table>
             <thead>
               <tr>
@@ -139,7 +139,7 @@
                   <td><p style="font-size: 12px;">또한, 어린 아이나 무인과의 통화 시에 목소리가 명확히 <br>전달되지 않는 경우가 종종 발생한다. 이와 같은 다양한 <br>상황에서 목소리를 명확히 전달하기 위해서는 디지털 <br>음성 처리를 통해 소음을 제거하고 음성의 명료도를 <br>향상해야 한다.</p></td>
                 </tr>
                 <tr>
-                  <td style="min-width: 250px;"><p style="font-size: 20px; text-align: center;">Model 1</p></td>
+                  <td style="min-width: 250px;"><p style="font-size: 20px; text-align: center;">Model 2</p></td>
                   <td><audio controls>
                       <source src="2_DNS_X_GPT_X_model_2.wav" type="audio/wav">
                       Your browser does not support the audio element.
@@ -165,7 +165,7 @@
                   <td><p style="font-size: 12px;">또한, 어린이나 무인과의 통화 시에 목소리가 명확하게 <br>전달되지 않는 경우가 종종 발생한다. 이와 같은 다양한 <br>상황에서 목소리를 명확하게 전달하기 위해서는 디지털 <br>음성 처리를 통해 소음을 제거하고 음성의 명료도를 <br>향상해야 한다.</p></td>
                 </tr>
                 <tr>
-                  <td style="min-width: 250px;"><p style="font-size: 20px; text-align: center;">Model 1</p></td>
+                  <td style="min-width: 250px;"><p style="font-size: 20px; text-align: center;">Model 3</p></td>
                   <td><audio controls>
                       <source src="2_DNS_X_GPT_X_model_3.wav" type="audio/wav">
                       Your browser does not support the audio element.
@@ -191,7 +191,7 @@
                   <td><p style="font-size: 12px;">또한, 어린이나 노인과의 통화 시에 목소리가 명확히 <br>전달되지 않는 경우가 종종 발생한다. 이와 같은 다양한 <br>상황에서 목소리를 명확히 전달하기 위해서는 디지털 <br>음성 처리를 통해 소음을 제거하고 음성의 명료도를 <br>향상해야 한다.</p></td>
                 </tr>
                 <tr>
-                  <td style="min-width: 250px;"><p style="font-size: 20px; text-align: center;">Model 1</p></td>
+                  <td style="min-width: 250px;"><p style="font-size: 20px; text-align: center;">Model 4</p></td>
                   <td><audio controls>
                       <source src="2_DNS_X_GPT_X_model_4.wav" type="audio/wav">
                       Your browser does not support the audio element.
